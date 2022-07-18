@@ -1,7 +1,11 @@
 version: 0.1
 
 phases:
-
+  install:
+    commands:
+      - echo installing nodejs...
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+      - yum install -y nodejs  #aws code build use ubuntu environement
   pre_build:
     commands:
       - npm install
