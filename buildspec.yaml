@@ -1,0 +1,21 @@
+version: 0.1
+
+phases:
+
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      # - echo testing...
+      # - echo building...
+      - npm run build:ssr
+  post_build:
+    commands:
+      - mv appspec.yml ./dist/AngularApp
+      - mv scripts ./dist/AngularApp
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: dist/AngularApp
