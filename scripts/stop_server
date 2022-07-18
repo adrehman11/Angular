@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/ec2-user
 isExistApp = `pgrep httpd`
 if [[ -n  $isExistApp ]]; then
     service httpd stop        
